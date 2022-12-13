@@ -1,17 +1,17 @@
 INFO: Applying HLS Y2K22 patch v1.2 for IP revision
 INFO: [HLS 200-10] Running '/tools/Xilinx/Vitis_HLS/2020.2/bin/unwrapped/lnx64.o/vitis_hls'
-INFO: [HLS 200-10] For user 'tjaz' on host 'tjaz-XPS-15-9570' (Linux_x86_64 version 5.15.0-53-generic) on Mon Dec 12 20:35:26 CET 2022
+INFO: [HLS 200-10] For user 'tjaz' on host 'tjaz-XPS-15-9570' (Linux_x86_64 version 5.15.0-53-generic) on Tue Dec 13 15:36:26 CET 2022
 INFO: [HLS 200-10] On os Ubuntu 20.04.5 LTS
 INFO: [HLS 200-10] In directory '/home/tjaz/final_ass/FPGA_AI'
-Sourcing Tcl script '/home/tjaz/final_ass/FPGA_AI/Neural_net_hls/solution1/csynth.tcl'
+Sourcing Tcl script '/home/tjaz/final_ass/FPGA_AI/Neural_net_hls/solution1/csim.tcl'
 INFO: [HLS 200-1510] Running: open_project Neural_net_hls 
 INFO: [HLS 200-10] Opening project '/home/tjaz/final_ass/FPGA_AI/Neural_net_hls'.
 INFO: [HLS 200-1510] Running: set_top nn_inference 
-INFO: [HLS 200-1510] Running: add_files src/hls/matmul.cpp 
-INFO: [HLS 200-10] Adding design file 'src/hls/matmul.cpp' to the project
 INFO: [HLS 200-1510] Running: add_files src/hls/matmul.hpp 
 INFO: [HLS 200-10] Adding design file 'src/hls/matmul.hpp' to the project
-INFO: [HLS 200-1510] Running: add_files -tb src/hls/matmul_tb.cpp 
+INFO: [HLS 200-1510] Running: add_files src/hls/matmul.cpp 
+INFO: [HLS 200-10] Adding design file 'src/hls/matmul.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb src/hls/matmul_tb.cpp -cflags -Wno-unknown-pragmas -csimflags -Wno-unknown-pragmas 
 INFO: [HLS 200-10] Adding test bench file 'src/hls/matmul_tb.cpp' to the project
 INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
 INFO: [HLS 200-10] Opening solution '/home/tjaz/final_ass/FPGA_AI/Neural_net_hls/solution1'.
@@ -21,215 +21,84 @@ INFO: [HLS 200-1505] Using flow_target 'vivado'
 Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-1505.html
 INFO: [HLS 200-1510] Running: set_part xczu3eg-sbva484-1-i 
 INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
-INFO: [HLS 200-1510] Running: csynth_design 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 93.131 MB.
-INFO: [HLS 200-10] Analyzing design file 'src/hls/matmul.cpp' ... 
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 13.03 seconds. CPU system time: 0.67 seconds. Elapsed time: 13.33 seconds; current allocated memory: 94.381 MB.
-INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
-INFO: [HLS 214-188] Unrolling loop 'prod' (src/hls/matmul.cpp:25:13) in function 'hwmm_layer1' partially with a factor of 2 (src/hls/matmul.cpp:25:13)
-INFO: [HLS 214-178] Inlining function 'float_to_fixed(float*, ap_fixed<32, 24, (ap_q_mode)5, (ap_o_mode)3, 0>*)' into 'nn_inference(float*)' (src/hls/matmul.cpp:124:0)
-INFO: [HLS 214-178] Inlining function 'hwmm_layer1(ap_fixed<32, 24, (ap_q_mode)5, (ap_o_mode)3, 0>*, ap_fixed<32, 24, (ap_q_mode)5, (ap_o_mode)3, 0> const (*) [64], ap_fixed<32, 24, (ap_q_mode)5, (ap_o_mode)3, 0> (*) [64])' into 'nn_inference(float*)' (src/hls/matmul.cpp:124:0)
-INFO: [HLS 214-178] Inlining function 'hw_act_layer1(ap_fixed<32, 24, (ap_q_mode)5, (ap_o_mode)3, 0> (*) [64], ap_fixed<32, 24, (ap_q_mode)5, (ap_o_mode)3, 0> (*) [64])' into 'nn_inference(float*)' (src/hls/matmul.cpp:124:0)
-INFO: [HLS 214-178] Inlining function 'hwmm_layer2(ap_fixed<32, 24, (ap_q_mode)5, (ap_o_mode)3, 0> (*) [64], ap_fixed<32, 24, (ap_q_mode)5, (ap_o_mode)3, 0> const (*) [16], ap_fixed<32, 24, (ap_q_mode)5, (ap_o_mode)3, 0> (*) [16])' into 'nn_inference(float*)' (src/hls/matmul.cpp:124:0)
-INFO: [HLS 214-178] Inlining function 'hw_act_layer2(ap_fixed<32, 24, (ap_q_mode)5, (ap_o_mode)3, 0> (*) [16], ap_fixed<32, 24, (ap_q_mode)5, (ap_o_mode)3, 0> (*) [16])' into 'nn_inference(float*)' (src/hls/matmul.cpp:124:0)
-INFO: [HLS 214-178] Inlining function 'hwmm_layer3(ap_fixed<32, 24, (ap_q_mode)5, (ap_o_mode)3, 0> (*) [16], ap_fixed<32, 24, (ap_q_mode)5, (ap_o_mode)3, 0> const (*) [2], ap_fixed<32, 24, (ap_q_mode)5, (ap_o_mode)3, 0> (*) [2])' into 'nn_inference(float*)' (src/hls/matmul.cpp:124:0)
-INFO: [HLS 214-178] Inlining function 'hw_act_layer3(ap_fixed<32, 24, (ap_q_mode)5, (ap_o_mode)3, 0> (*) [2], ap_fixed<32, 24, (ap_q_mode)5, (ap_o_mode)3, 0>&)' into 'nn_inference(float*)' (src/hls/matmul.cpp:124:0)
-INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 9.03 seconds. CPU system time: 0.65 seconds. Elapsed time: 9.93 seconds; current allocated memory: 96.715 MB.
-INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 96.716 MB.
-INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.08 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.1 seconds; current allocated memory: 110.047 MB.
-INFO: [HLS 200-10] Checking synthesizability ...
-WARNING: [SYNCHK 200-23] /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_fixed_base.h:897: variable-indexed range selection may cause suboptimal QoR.
-INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
-INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.16 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.18 seconds; current allocated memory: 127.234 MB.
-INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_5_1' (src/hls/matmul.cpp:5) in function 'nn_inference' automatically.
-INFO: [XFORM 203-510] Pipelining loop 'prod' (src/hls/matmul.cpp:23) in function 'nn_inference' automatically.
-INFO: [XFORM 203-510] Pipelining loop 'loop1' (src/hls/matmul.cpp:77) in function 'nn_inference' automatically.
-INFO: [XFORM 203-510] Pipelining loop 'col' (src/hls/matmul.cpp:40) in function 'nn_inference' automatically.
-INFO: [XFORM 203-510] Pipelining loop 'loop1' (src/hls/matmul.cpp:92) in function 'nn_inference' automatically.
-INFO: [XFORM 203-510] Pipelining loop 'col' (src/hls/matmul.cpp:59) in function 'nn_inference' automatically.
-INFO: [XFORM 203-510] Pipelining loop 'loop1' (src/hls/matmul.cpp:108) in function 'nn_inference' automatically.
-INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'col' (src/hls/matmul.cpp:40) in function 'nn_inference' for pipelining.
-INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'col' (src/hls/matmul.cpp:59) in function 'nn_inference' for pipelining.
-INFO: [HLS 200-489] Unrolling loop 'prod' (src/hls/matmul.cpp:42) in function 'nn_inference' completely with a factor of 64.
-INFO: [HLS 200-489] Unrolling loop 'prod' (src/hls/matmul.cpp:61) in function 'nn_inference' completely with a factor of 16.
-INFO: [XFORM 203-102] Partitioning array 'temp_output.V' (src/hls/matmul.cpp:133) in dimension 1 automatically.
-INFO: [XFORM 203-102] Partitioning array 'temp_output2.V' (src/hls/matmul.cpp:134) in dimension 1 automatically.
-INFO: [XFORM 203-102] Partitioning array 'temp_output3.V' (src/hls/matmul.cpp:135) in dimension 1 automatically.
-INFO: [XFORM 203-102] Partitioning array 'weights::layer3_weights.V' in dimension 1 automatically.
-INFO: [XFORM 203-102] Partitioning array 'weights::layer2_weights.V' in dimension 1 automatically.
-INFO: [XFORM 203-102] Automatically partitioning small array 'weights::layer3_weights.V.0' completely based on array size.
-INFO: [XFORM 203-102] Automatically partitioning small array 'weights::layer3_weights.V.1' completely based on array size.
-INFO: [XFORM 203-102] Automatically partitioning small array 'weights::layer3_weights.V.2' completely based on array size.
-INFO: [XFORM 203-102] Automatically partitioning small array 'weights::layer3_weights.V.3' completely based on array size.
-INFO: [XFORM 203-102] Automatically partitioning small array 'weights::layer3_weights.V.4' completely based on array size.
-INFO: [XFORM 203-102] Automatically partitioning small array 'weights::layer3_weights.V.5' completely based on array size.
-INFO: [XFORM 203-102] Automatically partitioning small array 'weights::layer3_weights.V.6' completely based on array size.
-INFO: [XFORM 203-102] Automatically partitioning small array 'weights::layer3_weights.V.7' completely based on array size.
-INFO: [XFORM 203-102] Automatically partitioning small array 'weights::layer3_weights.V.8' completely based on array size.
-INFO: [XFORM 203-102] Automatically partitioning small array 'weights::layer3_weights.V.9' completely based on array size.
-INFO: [XFORM 203-102] Automatically partitioning small array 'weights::layer3_weights.V.10' completely based on array size.
-INFO: [XFORM 203-102] Automatically partitioning small array 'weights::layer3_weights.V.11' completely based on array size.
-INFO: [XFORM 203-102] Automatically partitioning small array 'weights::layer3_weights.V.12' completely based on array size.
-INFO: [XFORM 203-102] Automatically partitioning small array 'weights::layer3_weights.V.13' completely based on array size.
-INFO: [XFORM 203-102] Automatically partitioning small array 'weights::layer3_weights.V.14' completely based on array size.
-INFO: [XFORM 203-102] Automatically partitioning small array 'weights::layer3_weights.V.15' completely based on array size.
-INFO: [XFORM 203-102] Automatically partitioning small array 'temp_output3.V.0' (src/hls/matmul.cpp:135) completely based on array size.
-INFO: [XFORM 203-101] Partitioning array 'weights::layer3_weights.V.0' in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'weights::layer3_weights.V.1' in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'weights::layer3_weights.V.2' in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'weights::layer3_weights.V.3' in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'weights::layer3_weights.V.4' in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'weights::layer3_weights.V.5' in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'weights::layer3_weights.V.6' in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'weights::layer3_weights.V.7' in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'weights::layer3_weights.V.8' in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'weights::layer3_weights.V.9' in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'weights::layer3_weights.V.10' in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'weights::layer3_weights.V.11' in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'weights::layer3_weights.V.12' in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'weights::layer3_weights.V.13' in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'weights::layer3_weights.V.14' in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'weights::layer3_weights.V.15' in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'temp_output3.V.0' (src/hls/matmul.cpp:135) in dimension 1 completely.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/hls/matmul.cpp:5:26) in function 'nn_inference'... converting 10 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (src/hls/matmul.cpp:79:7) in function 'nn_inference'... converting 8 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (src/hls/matmul.cpp:94:7) in function 'nn_inference'... converting 8 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/hls/matmul.cpp:136:18) to (src/hls/matmul.cpp:148:2) in function 'nn_inference'... converting 3 basic blocks.
-INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.84 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.88 seconds; current allocated memory: 171.280 MB.
-WARNING: [HLS 200-960] Cannot flatten loop 'col' (src/hls/matmul.cpp:21:19) in function 'nn_inference' the outer loop is not a perfect loop because there is nontrivial logic in the loop latch.
-Resolution: For help on HLS 200-960 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-960.html
-INFO: [HLS 200-472] Inferring partial write operation for 'fp_input_img.V' 
-INFO: [HLS 200-472] Inferring partial write operation for 'fp_input_img.V' (src/hls/matmul.cpp:6:13)
-INFO: [HLS 200-472] Inferring partial write operation for 'temp_output[0].V' 
-INFO: [HLS 200-472] Inferring partial write operation for 'temp_output[0].V' (src/hls/matmul.cpp:29:20)
-INFO: [HLS 200-472] Inferring partial write operation for 'temp_output[0].V' (src/hls/matmul.cpp:80:17)
-INFO: [HLS 200-472] Inferring partial write operation for 'temp_output2[0].V' (src/hls/matmul.cpp:48:20)
-INFO: [HLS 200-472] Inferring partial write operation for 'temp_output2[0].V' (src/hls/matmul.cpp:95:17)
-INFO: [XFORM 203-603] Evaluating the output(s) of a call to function '_ssdm_op_BitConcatenate.i7.i1.i6' in function 'nn_inference' and propagating its result(s) since all actual argument(s) to the function are constants.
-INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.66 seconds. CPU system time: 0 seconds. Elapsed time: 0.66 seconds; current allocated memory: 179.163 MB.
-INFO: [HLS 200-10] Starting hardware synthesis ...
-INFO: [HLS 200-10] Synthesizing 'nn_inference' ...
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'nn_inference' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [HLS 200-1457] Automatically inferring 1WnR RAM type for array 'fp_input_img_V'. Use bind_storage pragma to overwrite if needed.
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_5_1'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'VITIS_LOOP_5_1'
-INFO: [SCHED 204-61] Pipelining loop 'prod'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'prod'
-INFO: [SCHED 204-61] Pipelining loop 'loop1'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'loop1'
-INFO: [SCHED 204-61] Pipelining loop 'col'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 15, loop 'col'
-INFO: [SCHED 204-61] Pipelining loop 'loop1'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'loop1'
-INFO: [SCHED 204-61] Pipelining loop 'col'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'col'
-INFO: [SCHED 204-61] Pipelining loop 'loop1'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'loop1'
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.96 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.99 seconds; current allocated memory: 183.008 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.8 seconds. CPU system time: 0 seconds. Elapsed time: 0.8 seconds; current allocated memory: 187.482 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'nn_inference' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-500] Setting interface mode on port 'nn_inference/input_img' to 'ap_memory'.
-INFO: [RTGEN 206-500] Setting interface mode on function 'nn_inference' to 'ap_ctrl_hs'.
-INFO: [RTGEN 206-100] Generating core module 'dcmp_64ns_64ns_1_2_no_dsp_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'fpext_32ns_64_2_no_dsp_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mul_32s_7ns_38_1_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mul_32s_7s_38_1_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mul_32s_7s_39_1_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mul_7s_32s_39_1_1': 10 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mul_8s_32s_40_1_1': 64 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mul_9s_32s_40_1_1': 5 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'nn_inference'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.39 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.43 seconds; current allocated memory: 195.769 MB.
-INFO: [RTMG 210-282] Generating pipelined core: 'nn_inference_mul_7s_32s_39_1_1_Multiplier_0'
-INFO: [RTMG 210-282] Generating pipelined core: 'nn_inference_mul_8s_32s_40_1_1_Multiplier_1'
-INFO: [RTMG 210-282] Generating pipelined core: 'nn_inference_mul_32s_7s_38_1_1_Multiplier_2'
-INFO: [RTMG 210-282] Generating pipelined core: 'nn_inference_mul_32s_7ns_38_1_1_Multiplier_3'
-INFO: [RTMG 210-282] Generating pipelined core: 'nn_inference_mul_32s_7s_39_1_1_Multiplier_4'
-INFO: [RTMG 210-282] Generating pipelined core: 'nn_inference_mul_9s_32s_40_1_1_Multiplier_5'
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_weights_layer1_weights_V_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_0_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_1_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_2_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_3_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_4_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_5_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_6_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_7_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_8_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_9_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_10_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_11_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_12_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_13_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_14_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_15_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_16_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_17_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_18_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_19_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_20_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_21_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_22_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_23_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_24_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_25_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_26_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_27_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_28_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_29_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_30_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_31_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_32_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_33_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_34_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_35_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_36_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_37_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_38_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_39_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_40_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_41_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_42_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_43_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_44_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_45_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_46_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_47_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_48_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_49_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_50_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_51_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_52_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_53_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_54_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_55_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_56_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_57_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_58_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_59_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_60_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_61_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_62_rom' using auto ROMs.
-INFO: [RTMG 210-279] Implementing memory 'nn_inference_layer2_weights_V_63_rom' using auto ROMs.
-INFO: [RTMG 210-278] Implementing memory 'nn_inference_fp_input_img_V_ram (RAM_1WnR)' using auto RAMs.
-INFO: [RTMG 210-278] Implementing memory 'nn_inference_temp_output_0_V_ram (RAM)' using auto RAMs.
-INFO: [RTMG 210-278] Implementing memory 'nn_inference_temp_output2_0_V_ram (RAM)' using auto RAMs.
-INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 8.94 seconds. CPU system time: 0.16 seconds. Elapsed time: 9.15 seconds; current allocated memory: 223.019 MB.
-INFO: [VHDL 208-304] Generating VHDL RTL for nn_inference.
-INFO: [VLOG 209-307] Generating Verilog RTL for nn_inference.
-INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
-INFO: [HLS 200-789] **** Estimated Fmax: 137.28 MHz
-INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 35.97 seconds. CPU system time: 1.57 seconds. Elapsed time: 37.52 seconds; current allocated memory: 223.186 MB.
-INFO: [HLS 200-112] Total CPU user time: 38.36 seconds. Total CPU system time: 2.06 seconds. Total elapsed time: 39.37 seconds; peak allocated memory: 223.019 MB.
+INFO: [HLS 200-1510] Running: set_directive_top -name nn_inference nn_inference 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../src/hls/matmul_tb.cpp in debug mode
+   Generating csim.exe
+
+1
+NN Prediction: 0
+
+
+2
+NN Prediction: 4
+
+
+3
+NN Prediction: 0
+
+
+4
+NN Prediction: 4
+
+
+5
+NN Prediction: 2
+
+
+6
+NN Prediction: 2
+
+
+7
+NN Prediction: 2
+
+
+8
+NN Prediction: 1
+
+
+9
+NN Prediction: 1
+
+
+10
+NN Prediction: 1
+
+
+11
+NN Prediction: 1
+
+
+12
+NN Prediction: 3
+
+
+13
+NN Prediction: 3
+
+
+14
+NN Prediction: 3
+
+
+15
+NN Prediction: 3
+
+
+16
+NN Prediction: 4
+
+
+17
+NN Prediction: 4
+
+
+18
+NN Prediction: 4
+
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 7.62 seconds. CPU system time: 0.58 seconds. Elapsed time: 7.57 seconds; current allocated memory: 93.248 MB.

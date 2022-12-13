@@ -20,4 +20,5 @@ obj/matmul.o: ../../../../src/hls/matmul.cpp \
  /tools/Xilinx/Vitis_HLS/2020.2/include/ap_fixed.h \
  /tools/Xilinx/Vitis_HLS/2020.2/include/ap_fixed_base.h \
  /tools/Xilinx/Vitis_HLS/2020.2/include/ap_fixed_ref.h \
- /tools/Xilinx/Vitis_HLS/2020.2/include/ap_fixed_special.h
+ /tools/Xilinx/Vitis_HLS/2020.2/include/ap_fixed_special.h \
+ /home/tjaz/final_ass/embedded_project_ML/all_weights.h
