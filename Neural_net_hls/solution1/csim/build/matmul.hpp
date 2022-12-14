@@ -4,8 +4,8 @@
 
 
 #define n_inputs 400
-#define n_layer1 64
-#define n_layer2 16
+#define n_layer1 128
+#define n_layer2 64
 #define n_layer3 5
 
 

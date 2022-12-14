@@ -1,16 +1,16 @@
 INFO: Applying HLS Y2K22 patch v1.2 for IP revision
 INFO: [HLS 200-10] Running '/tools/Xilinx/Vitis_HLS/2020.2/bin/unwrapped/lnx64.o/vitis_hls'
-INFO: [HLS 200-10] For user 'tjaz' on host 'tjaz-XPS-15-9570' (Linux_x86_64 version 5.15.0-53-generic) on Tue Dec 13 15:36:26 CET 2022
+INFO: [HLS 200-10] For user 'tjaz' on host 'tjaz-XPS-15-9570' (Linux_x86_64 version 5.15.0-53-generic) on Wed Dec 14 18:32:32 CET 2022
 INFO: [HLS 200-10] On os Ubuntu 20.04.5 LTS
 INFO: [HLS 200-10] In directory '/home/tjaz/final_ass/FPGA_AI'
-Sourcing Tcl script '/home/tjaz/final_ass/FPGA_AI/Neural_net_hls/solution1/csim.tcl'
+Sourcing Tcl script '/home/tjaz/final_ass/FPGA_AI/Neural_net_hls/solution1/export.tcl'
 INFO: [HLS 200-1510] Running: open_project Neural_net_hls 
 INFO: [HLS 200-10] Opening project '/home/tjaz/final_ass/FPGA_AI/Neural_net_hls'.
 INFO: [HLS 200-1510] Running: set_top nn_inference 
-INFO: [HLS 200-1510] Running: add_files src/hls/matmul.hpp 
-INFO: [HLS 200-10] Adding design file 'src/hls/matmul.hpp' to the project
 INFO: [HLS 200-1510] Running: add_files src/hls/matmul.cpp 
 INFO: [HLS 200-10] Adding design file 'src/hls/matmul.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files src/hls/matmul.hpp 
+INFO: [HLS 200-10] Adding design file 'src/hls/matmul.hpp' to the project
 INFO: [HLS 200-1510] Running: add_files -tb src/hls/matmul_tb.cpp -cflags -Wno-unknown-pragmas -csimflags -Wno-unknown-pragmas 
 INFO: [HLS 200-10] Adding test bench file 'src/hls/matmul_tb.cpp' to the project
 INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
@@ -22,83 +22,27 @@ Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020
 INFO: [HLS 200-1510] Running: set_part xczu3eg-sbva484-1-i 
 INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
 INFO: [HLS 200-1510] Running: set_directive_top -name nn_inference nn_inference 
-INFO: [HLS 200-1510] Running: csim_design -quiet 
-INFO: [SIM 211-2] *************** CSIM start ***************
-INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
-   Compiling ../../../../src/hls/matmul_tb.cpp in debug mode
-   Generating csim.exe
+INFO: [HLS 200-1510] Running: export_design -rtl vhdl -format ip_catalog -output /home/tjaz/final_ass/FPGA_AI/nn_inference.zip 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
 
-1
-NN Prediction: 0
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 
-
-2
-NN Prediction: 4
-
-
-3
-NN Prediction: 0
-
-
-4
-NN Prediction: 4
-
-
-5
-NN Prediction: 2
-
-
-6
-NN Prediction: 2
-
-
-7
-NN Prediction: 2
-
-
-8
-NN Prediction: 1
-
-
-9
-NN Prediction: 1
-
-
-10
-NN Prediction: 1
-
-
-11
-NN Prediction: 1
-
-
-12
-NN Prediction: 3
-
-
-13
-NN Prediction: 3
-
-
-14
-NN Prediction: 3
-
-
-15
-NN Prediction: 3
-
-
-16
-NN Prediction: 4
-
-
-17
-NN Prediction: 4
-
-
-18
-NN Prediction: 4
-
-INFO: [SIM 211-1] CSim done with 0 errors.
-INFO: [SIM 211-3] *************** CSIM finish ***************
-INFO: [HLS 200-111] Finished Command csim_design CPU user time: 7.62 seconds. CPU system time: 0.58 seconds. Elapsed time: 7.57 seconds; current allocated memory: 93.248 MB.
+source run_ippack.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2020.2/data/ip'.
+WARNING: [IP_Flow 19-4832] The IP name 'nn_inference_ap_dcmp_0_no_dsp_64' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'nn_inference_ap_dcmp_0_no_dsp_64'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'nn_inference_ap_dcmp_0_no_dsp_64'...
+WARNING: [IP_Flow 19-4832] The IP name 'nn_inference_ap_fpext_0_no_dsp_32' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'nn_inference_ap_fpext_0_no_dsp_32'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'nn_inference_ap_fpext_0_no_dsp_32'...
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2020.2/data/ip'.
+INFO: [Common 17-206] Exiting Vivado at Wed Dec 14 18:32:51 2022...
+INFO: [HLS 200-802] Generated output file nn_inference.zip
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 16.17 seconds. CPU system time: 2.84 seconds. Elapsed time: 20.72 seconds; current allocated memory: 101.989 MB.

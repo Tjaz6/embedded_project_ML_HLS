@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="matmul.hpp" path="/home/tjaz/final_ass/FPGA_AI/src/hls/matmul.hpp"/>
     <originFiles name="matmul.cpp" path="/home/tjaz/final_ass/FPGA_AI/src/hls/matmul.cpp"/>
+    <originFiles name="matmul.hpp" path="/home/tjaz/final_ass/FPGA_AI/src/hls/matmul.hpp"/>
   </source>
   <testbench>
     <originFiles name="matmul_tb.cpp" path="/home/tjaz/final_ass/FPGA_AI/src/hls/matmul_tb.cpp"/>

@@ -7,8 +7,8 @@ module nn_inference_weights_layer1_weights_V_rom (
 addr0, ce0, q0, addr1, ce1, q1, clk);
 
 parameter DWIDTH = 7;
-parameter AWIDTH = 15;
-parameter MEM_SIZE = 25600;
+parameter AWIDTH = 16;
+parameter MEM_SIZE = 51200;
 
 input[AWIDTH-1:0] addr0;
 input ce0;
@@ -60,8 +60,8 @@ module nn_inference_weights_layer1_weights_V(
     q1);
 
 parameter DataWidth = 32'd7;
-parameter AddressRange = 32'd25600;
-parameter AddressWidth = 32'd15;
+parameter AddressRange = 32'd51200;
+parameter AddressWidth = 32'd16;
 input reset;
 input clk;
 input[AddressWidth - 1:0] address0;

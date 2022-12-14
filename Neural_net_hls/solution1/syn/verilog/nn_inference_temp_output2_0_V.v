@@ -6,8 +6,8 @@
 module nn_inference_temp_output2_0_V_ram (addr0, ce0, d0, we0, q0, addr1, ce1, q1,  clk);
 
 parameter DWIDTH = 32;
-parameter AWIDTH = 4;
-parameter MEM_SIZE = 16;
+parameter AWIDTH = 6;
+parameter MEM_SIZE = 64;
 
 input[AWIDTH-1:0] addr0;
 input ce0;
@@ -58,8 +58,8 @@ module nn_inference_temp_output2_0_V(
     q1);
 
 parameter DataWidth = 32'd32;
-parameter AddressRange = 32'd16;
-parameter AddressWidth = 32'd4;
+parameter AddressRange = 32'd64;
+parameter AddressWidth = 32'd6;
 input reset;
 input clk;
 input[AddressWidth - 1:0] address0;

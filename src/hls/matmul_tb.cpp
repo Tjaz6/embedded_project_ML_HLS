@@ -6,18 +6,9 @@
 
 int main() {
 
-	for(int i=1; i<19; i++){
+	for(int i=0; i<20; i++){
 
-
-	//int i =1;
-		float temp_image[400]={0};
-
-		for(int j=0;j<400;j++){
-			temp_image[j]=images_array[i][j];
-		}
-
-
-		int pred = nn_inference(temp_image);
+		int pred = nn_inference(images_array[i]);
 		std::cout << std::endl;
 		std::cout << i << std::endl;
 		std::cout << "NN Prediction: " << pred << std::endl;

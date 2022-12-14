@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'nn_inference'" level="0">
-<item name = "Date">Mon Dec 12 20:35:55 2022
+<item name = "Date">Wed Dec 14 18:29:25 2022
 </item>
 <item name = "Version">2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)</item>
 <item name = "Project">Neural_net_hls</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">13630, 13630, 0.136 ms, 0.136 ms, 13631, 13631, none</column>
+<column name="">34972, 34972, 0.350 ms, 0.350 ms, 34973, 34973, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -36,13 +36,13 @@
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
 <column name="- VITIS_LOOP_5_1">402, 402, 4, 1, 1, 400, yes</column>
-<column name="- col">13056, 13056, 204, -, -, 64, no</column>
+<column name="- col">26112, 26112, 204, -, -, 128, no</column>
 <column name=" + prod">201, 201, 3, 1, 1, 200, yes</column>
+<column name="- loop1">130, 130, 4, 1, 1, 128, yes</column>
+<column name="- col_prod">8193, 8193, 3, 1, 1, 8192, yes</column>
 <column name="- loop1">66, 66, 4, 1, 1, 64, yes</column>
-<column name="- col">29, 29, 15, 1, 1, 16, yes</column>
-<column name="- loop1">18, 18, 4, 1, 1, 16, yes</column>
-<column name="- col">4, 4, 4, 1, 1, 2, yes</column>
-<column name="- loop1">2, 2, 1, 1, 1, 2, yes</column>
+<column name="- col">18, 18, 15, 1, 1, 5, yes</column>
+<column name="- loop1">6, 6, 2, 1, 1, 5, yes</column>
 </table>
 </item>
 </section>

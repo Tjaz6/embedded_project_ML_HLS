@@ -10,8 +10,8 @@ use ieee.std_logic_unsigned.all;
 entity nn_inference_temp_output2_0_V_ram is 
     generic(
             DWIDTH     : integer := 32; 
-            AWIDTH     : integer := 4; 
-            MEM_SIZE    : integer := 16
+            AWIDTH     : integer := 6; 
+            MEM_SIZE    : integer := 64
     ); 
     port (
           addr0     : in std_logic_vector(AWIDTH-1 downto 0); 
@@ -92,8 +92,8 @@ use IEEE.std_logic_1164.all;
 entity nn_inference_temp_output2_0_V is
     generic (
         DataWidth : INTEGER := 32;
-        AddressRange : INTEGER := 16;
-        AddressWidth : INTEGER := 4);
+        AddressRange : INTEGER := 64;
+        AddressWidth : INTEGER := 6);
     port (
         reset : IN STD_LOGIC;
         clk : IN STD_LOGIC;

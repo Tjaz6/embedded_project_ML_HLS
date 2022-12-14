@@ -19,14 +19,14 @@
         </SummaryOfTimingAnalysis>
         <SummaryOfOverallLatency>
             <unit>clock cycles</unit>
-            <Best-caseLatency>13630</Best-caseLatency>
-            <Average-caseLatency>13630</Average-caseLatency>
-            <Worst-caseLatency>13630</Worst-caseLatency>
-            <Best-caseRealTimeLatency>0.136 ms</Best-caseRealTimeLatency>
-            <Average-caseRealTimeLatency>0.136 ms</Average-caseRealTimeLatency>
-            <Worst-caseRealTimeLatency>0.136 ms</Worst-caseRealTimeLatency>
-            <Interval-min>13631</Interval-min>
-            <Interval-max>13631</Interval-max>
+            <Best-caseLatency>34972</Best-caseLatency>
+            <Average-caseLatency>34972</Average-caseLatency>
+            <Worst-caseLatency>34972</Worst-caseLatency>
+            <Best-caseRealTimeLatency>0.350 ms</Best-caseRealTimeLatency>
+            <Average-caseRealTimeLatency>0.350 ms</Average-caseRealTimeLatency>
+            <Worst-caseRealTimeLatency>0.350 ms</Worst-caseRealTimeLatency>
+            <Interval-min>34973</Interval-min>
+            <Interval-max>34973</Interval-max>
         </SummaryOfOverallLatency>
         <SummaryOfLoopLatency>
             <VITIS_LOOP_5_1>
@@ -37,9 +37,9 @@
                 <PipelineDepth>4</PipelineDepth>
             </VITIS_LOOP_5_1>
             <col>
-                <TripCount>64</TripCount>
-                <Latency>13056</Latency>
-                <AbsoluteTimeLatency>130560</AbsoluteTimeLatency>
+                <TripCount>128</TripCount>
+                <Latency>26112</Latency>
+                <AbsoluteTimeLatency>261120</AbsoluteTimeLatency>
                 <IterationLatency>204</IterationLatency>
                 <prod>
                     <TripCount>200</TripCount>
@@ -50,6 +50,20 @@
                 </prod>
             </col>
             <loop1>
+                <TripCount>128</TripCount>
+                <Latency>130</Latency>
+                <AbsoluteTimeLatency>1300</AbsoluteTimeLatency>
+                <PipelineII>1</PipelineII>
+                <PipelineDepth>4</PipelineDepth>
+            </loop1>
+            <col_prod>
+                <TripCount>8192</TripCount>
+                <Latency>8193</Latency>
+                <AbsoluteTimeLatency>81930</AbsoluteTimeLatency>
+                <PipelineII>1</PipelineII>
+                <PipelineDepth>3</PipelineDepth>
+            </col_prod>
+            <loop1>
                 <TripCount>64</TripCount>
                 <Latency>66</Latency>
                 <AbsoluteTimeLatency>660</AbsoluteTimeLatency>
@@ -57,41 +71,27 @@
                 <PipelineDepth>4</PipelineDepth>
             </loop1>
             <col>
-                <TripCount>16</TripCount>
-                <Latency>29</Latency>
-                <AbsoluteTimeLatency>290</AbsoluteTimeLatency>
+                <TripCount>5</TripCount>
+                <Latency>18</Latency>
+                <AbsoluteTimeLatency>180</AbsoluteTimeLatency>
                 <PipelineII>1</PipelineII>
                 <PipelineDepth>15</PipelineDepth>
             </col>
             <loop1>
-                <TripCount>16</TripCount>
-                <Latency>18</Latency>
-                <AbsoluteTimeLatency>180</AbsoluteTimeLatency>
+                <TripCount>5</TripCount>
+                <Latency>6</Latency>
+                <AbsoluteTimeLatency>60</AbsoluteTimeLatency>
                 <PipelineII>1</PipelineII>
-                <PipelineDepth>4</PipelineDepth>
-            </loop1>
-            <col>
-                <TripCount>2</TripCount>
-                <Latency>4</Latency>
-                <AbsoluteTimeLatency>40</AbsoluteTimeLatency>
-                <PipelineII>1</PipelineII>
-                <PipelineDepth>4</PipelineDepth>
-            </col>
-            <loop1>
-                <TripCount>2</TripCount>
-                <Latency>2</Latency>
-                <AbsoluteTimeLatency>20</AbsoluteTimeLatency>
-                <PipelineII>1</PipelineII>
-                <PipelineDepth>1</PipelineDepth>
+                <PipelineDepth>2</PipelineDepth>
             </loop1>
         </SummaryOfLoopLatency>
     </PerformanceEstimates>
     <AreaEstimates>
         <Resources>
-            <BRAM_18K>16</BRAM_18K>
+            <BRAM_18K>32</BRAM_18K>
             <DSP>0</DSP>
-            <FF>9740</FF>
-            <LUT>10566</LUT>
+            <FF>8122</FF>
+            <LUT>9244</LUT>
             <URAM>0</URAM>
         </Resources>
         <AvailableResources>
@@ -232,13 +232,13 @@
                     <EstimatedClockPeriod>7.285</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>13630</Best-caseLatency>
-                    <Average-caseLatency>13630</Average-caseLatency>
-                    <Worst-caseLatency>13630</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.136 ms</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.136 ms</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.136 ms</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>13631</PipelineInitiationInterval>
+                    <Best-caseLatency>34972</Best-caseLatency>
+                    <Average-caseLatency>34972</Average-caseLatency>
+                    <Worst-caseLatency>34972</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.350 ms</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.350 ms</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.350 ms</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>34973</PipelineInitiationInterval>
                     <PipelineType>none</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
@@ -252,9 +252,9 @@
                     </VITIS_LOOP_5_1>
                     <col>
                         <Name>col</Name>
-                        <TripCount>64</TripCount>
-                        <Latency>13056</Latency>
-                        <AbsoluteTimeLatency>0.131 ms</AbsoluteTimeLatency>
+                        <TripCount>128</TripCount>
+                        <Latency>26112</Latency>
+                        <AbsoluteTimeLatency>0.261 ms</AbsoluteTimeLatency>
                         <IterationLatency>204</IterationLatency>
                         <PipelineDepth>204</PipelineDepth>
                         <prod>
@@ -268,6 +268,22 @@
                     </col>
                     <loop1>
                         <Name>loop1</Name>
+                        <TripCount>128</TripCount>
+                        <Latency>130</Latency>
+                        <AbsoluteTimeLatency>1.300 us</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>4</PipelineDepth>
+                    </loop1>
+                    <col_prod>
+                        <Name>col_prod</Name>
+                        <TripCount>8192</TripCount>
+                        <Latency>8193</Latency>
+                        <AbsoluteTimeLatency>81.930 us</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>3</PipelineDepth>
+                    </col_prod>
+                    <loop1>
+                        <Name>loop1</Name>
                         <TripCount>64</TripCount>
                         <Latency>66</Latency>
                         <AbsoluteTimeLatency>0.660 us</AbsoluteTimeLatency>
@@ -276,52 +292,36 @@
                     </loop1>
                     <col>
                         <Name>col</Name>
-                        <TripCount>16</TripCount>
-                        <Latency>29</Latency>
-                        <AbsoluteTimeLatency>0.290 us</AbsoluteTimeLatency>
+                        <TripCount>5</TripCount>
+                        <Latency>18</Latency>
+                        <AbsoluteTimeLatency>0.180 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>15</PipelineDepth>
                     </col>
                     <loop1>
                         <Name>loop1</Name>
-                        <TripCount>16</TripCount>
-                        <Latency>18</Latency>
-                        <AbsoluteTimeLatency>0.180 us</AbsoluteTimeLatency>
+                        <TripCount>5</TripCount>
+                        <Latency>6</Latency>
+                        <AbsoluteTimeLatency>60.000 ns</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
-                        <PipelineDepth>4</PipelineDepth>
-                    </loop1>
-                    <col>
-                        <Name>col</Name>
-                        <TripCount>2</TripCount>
-                        <Latency>4</Latency>
-                        <AbsoluteTimeLatency>40.000 ns</AbsoluteTimeLatency>
-                        <PipelineII>1</PipelineII>
-                        <PipelineDepth>4</PipelineDepth>
-                    </col>
-                    <loop1>
-                        <Name>loop1</Name>
-                        <TripCount>2</TripCount>
-                        <Latency>2</Latency>
-                        <AbsoluteTimeLatency>20.000 ns</AbsoluteTimeLatency>
-                        <PipelineII>1</PipelineII>
-                        <PipelineDepth>1</PipelineDepth>
+                        <PipelineDepth>2</PipelineDepth>
                     </loop1>
                 </SummaryOfLoopLatency>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <BRAM_18K>16</BRAM_18K>
+                    <BRAM_18K>32</BRAM_18K>
                     <AVAIL_BRAM>432</AVAIL_BRAM>
-                    <UTIL_BRAM>3</UTIL_BRAM>
+                    <UTIL_BRAM>7</UTIL_BRAM>
                     <DSP>0</DSP>
                     <AVAIL_DSP>360</AVAIL_DSP>
                     <UTIL_DSP>0</UTIL_DSP>
-                    <FF>9740</FF>
+                    <FF>8122</FF>
                     <AVAIL_FF>141120</AVAIL_FF>
-                    <UTIL_FF>6</UTIL_FF>
-                    <LUT>10566</LUT>
+                    <UTIL_FF>5</UTIL_FF>
+                    <LUT>9244</LUT>
                     <AVAIL_LUT>70560</AVAIL_LUT>
-                    <UTIL_LUT>14</UTIL_LUT>
+                    <UTIL_LUT>13</UTIL_LUT>
                     <URAM>0</URAM>
                     <AVAIL_URAM>0</AVAIL_URAM>
                     <UTIL_URAM>0</UTIL_URAM>
